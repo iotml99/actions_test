@@ -1,0 +1,17 @@
+name : test_action
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on : ubuntu-latest
+  steps:
+    - name : checkout
+      uses : actions/checkout@v2
+    - name : Build binary
+      run : gcc main.c -o test
+
+
+
